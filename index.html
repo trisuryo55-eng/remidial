@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Portal Remedial - Pak Tri Suryo</title>
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Biru Tua */
+            --secondary: #3b82f6; /* Biru Cerah */
+            --background: #f3f4f6;
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --wa-color: #25D366; /* Hijau WA */
+            --wa-hover: #128C7E;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero / Header Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .hero .desc {
+            font-size: 0.95rem;
+            margin-top: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        /* Container & Grid untuk Layout Fleksibel */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            /* Responsif otomatis: di HP jadi 1 kolom, di laptop bisa 2-4 kolom */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card / Kotak Mata Pelajaran */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-top: 4px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        /* Tombol Link */
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary);
+        }
+
+        /* Section WhatsApp */
+        .help-section {
+            text-align: center;
+            margin: 20px 20px 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .help-section p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--wa-color);
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-wa:hover {
+            background-color: var(--wa-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-wa svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            fill: currentColor;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #e5e7eb;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* Optimasi Khusus Layar HP (Mobile) */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 40px 15px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .container {
+                margin: 25px auto;
+                gap: 15px;
+            }
+            .card {
+                padding: 20px 15px;
+            }
+            .btn {
+                padding: 14px 20px; /* Tombol lebih besar agar mudah ditekan di layar sentuh */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Portal Remedial Siswa</h1>
+        <p>Bersama Pak Tri Suryo | SMK Muhammadiyah Karanganyar</p>
+        <div class="desc">
+            Halaman ini khusus untuk evaluasi remedial. Silakan pilih mata pelajaran Anda di bawah ini dan kerjakan dengan teliti.
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <div>
+                <h3>Pendidikan Agama Islam</h3>
+                <p>Kelas X</p>
+            </div>
+            <a href="https://wayground.com/join?gc=09299593" class="btn" target="_blank">Mulai Remedial PAI</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Informatika</h3>
+                <p>Kelas X</p>
+            </div>
+            <a href="https://wayground.com/join?gc=38004361" class="btn" target="_blank">Mulai Remedial Informatika</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Bahasa Arab</h3>
+                <p>Kelas XI</p>
+            </div>
+            <a href="https://wayground.com/join?gc=52946569" class="btn" target="_blank">Mulai Remedial B. Arab</a>
+        </div>
+
+        <div class="card">
+            <div>
+                <h3>Kemuhammadiyahan</h3>
+                <p>Kelas X & XI</p>
+            </div>
+            <a href="https://wayground.com/join?gc=02090633" class="btn" target="_blank">Mulai Remedial Kemuh</a>
+        </div>
+    </main>
+
+    <section class="help-section">
+        <p>Ada kendala akses atau pertanyaan teknis terkait soal?</p>
+        <a href="https://wa.me/6287722577763" class="btn-wa" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 413.6c-33.1 0-65.5-8.9-94-25.7l-6.7-4-69.8 18.3L72 334.1l-4.4-7.1c-18.4-29.6-28.1-63.7-28.1-98.8 0-103.1 84.1-187.1 187.3-187.1 50 0 97 19.5 132.3 54.8 35.3 35.3 54.8 82.3 54.8 132.3 0 103.1-84 187.1-187.1 187.1zm102.6-140.2c-5.6-2.8-33.4-16.5-38.6-18.4-5.2-1.9-9-2.8-12.8 2.8-3.8 5.6-14.7 18.4-18 22.2-3.3 3.8-6.6 4.3-12.3 1.4-5.6-2.8-23.8-8.8-45.3-27.9-16.7-14.8-28-33.1-31.3-38.6-3.3-5.6-.4-8.6 2.4-11.4 2.5-2.5 5.6-6.6 8.4-9.9 2.8-3.3 3.8-5.6 5.6-9.4 1.9-3.8.9-7.1-.4-9.9-1.4-2.8-12.8-30.9-17.5-42.3-4.6-11.1-9.2-9.6-12.8-9.8-3.3-.2-7.1-.2-10.9-.2-3.8 0-9.9 1.4-15.1 7.1-5.2 5.6-20.1 19.6-20.1 47.8 0 28.2 20.6 55.4 23.4 59.2 2.8 3.8 40.4 61.6 97.9 86.4 13.8 6 24.6 9.6 33.1 12.3 13.9 4.4 26.6 3.8 36.6 2.3 11.2-1.7 33.4-13.6 38.1-26.8 4.7-13.2 4.7-24.6 3.3-26.8-1.4-2.2-5.1-3.6-10.8-6.4z"/>
+            </svg>
+            Hubungi Pak Tri
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pak Tri Suryo - Hak Cipta Dilindungi.</p>
+    </footer>
+
+</body>
+</html>
